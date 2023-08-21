@@ -34,14 +34,4 @@ export class TaskModel implements Task {
     this.createdAt = new Date();
     this.updatedAt = new Date();
   }
-
-  updateStatus(newStatus: TaskStatus) {
-    this.status = newStatus;
-    this.updatedAt = new Date();
-  }
-
-  updateDueDate(newDueDate: Date) {
-    this.dueDate = newDueDate;
-    this.updatedAt = new Date();
-  }
 }

@@ -26,10 +26,11 @@ export class TaskService {
 
   updateTask(taskId, title, description, status, dueDate): any {
     const taskIndex = Tasks.findIndex((task) => task.id === parseInt(taskId));
-    const newTask = new TaskModel(taskId, title, description, status, dueDate);
-    newTask.updateStatus(status);
-    newTask.updateDueDate(dueDate);
-    Tasks.splice(taskIndex, 1, newTask);
+    Tasks[taskIndex].title = title;
+    Tasks[taskIndex].description = description;
+    Tasks[taskIndex].status = status;
+    Tasks[taskIndex].dueDate = dueDate;
+    Tasks[taskIndex].updatedAt = new Date();
     return Tasks;
   }
 
